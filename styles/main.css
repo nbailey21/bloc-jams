@@ -69,8 +69,12 @@ body {
   max-width: 64 rem;
 }
 
+.container.narrow {
+  max-width: 56rem;
+}
+
 /* Medium and small screens (640px) */
-@@media (min-width: 640px) {
+@media (min-width: 640px) {
   html {font-size: 112%;}
 
 
@@ -89,7 +93,7 @@ body {
 }
 
 /* large screens (1024px) */
-@@media (min-width: 1024px) {
+@media (min-width: 1024px) {
   html {font-size: 120%;}
 }
 
