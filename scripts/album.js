@@ -28,6 +28,25 @@ var albumMarconi = {
      ]
 };
 
+var albumAtmosphere = {
+  title: 'Lucy Ford',
+  artist: 'Atmosphere',
+  label: 'Rhymesayers',
+  year: '2001',
+  albumArtUrl: 'assets/images/album_covers/15.png',
+  songs: [
+      { title: 'Between the Lines', duration: '5:19' },
+      { title: 'Like Today', duration: '4:02' },
+      { title: 'Tears for the Sheep', duration: '2:51' },
+      { title: 'Guns and Cigarettes', duration: '4:21' },
+      { title: 'Dont Ever Question That', duration: '4:17' },
+      { title: 'It Goes', duration: '4:27' },
+      { title: 'If I was Santa Claus', duration: '3:50' }
+  ]
+};
+
+var albumsList = [albumPicasso, albumMarconi, albumAtmosphere];
+
 var createSongRow = function(songNumber, songName, songLength) {
   var template =
     '<tr class="album-view-song-item">'
@@ -47,12 +66,18 @@ var setCurrentAlbum = function(album) {
   var albumImage = document.getElementsByClassName('album-cover-art')[0];
   var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
 
+  var nextAlbum = function () {
+    alert("hello");
+  };
+
   albumTitle.firstChild.nodeValue = album.title;
   albumArtist.firstChild.nodeValue = album.artist;
   albumReleaseInfo.firstChild.nodeValue = album.year + ' ' + album.label;
   albumImage.setAttribute('src', album.albumArtUrl);
+  albumImage.addEventListener("click", nextAlbum());
 
   albumSongList.innerHTML = '';
+
 
   for (var i = 0; i < album.songs.length; i++) {
     albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
@@ -60,5 +85,5 @@ var setCurrentAlbum = function(album) {
 };
 
 window.onload = function() {
-  setCurrentAlbum(albumPicasso);
+  setCurrentAlbum(albumsList[0]);
 };
