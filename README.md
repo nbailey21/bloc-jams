@@ -1,4 +1,4 @@
-Bloc Jams is a JavaScript music player for a web browser or mobile device. 
+Jam Player is a JavaScript music player for a web browser or mobile device. 
 
 The Collection page, accessed via the link in the upper right corner of the home page, presents a set of albums. Each album reference includes artist, album title, song count, and album art. Selecting an album loads the album page.
 
